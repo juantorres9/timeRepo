@@ -1,0 +1,146 @@
+@CHARSET "ISO-8859-1";
+
+/*Style de Classes*/
+.h1{
+	color:#000040;
+	font-size: 34px;
+	text-align: center;
+	margin:0px;
+	font-weight: bold	
+}
+.h2{
+	color:#000040;
+	font-size: 28px;
+	text-align: center;
+	margin:0px;
+	font-weight: bold	
+}
+.form1{
+	width: 100%;
+	text-align: center;
+	margin-top:5px;
+}
+
+.div0 {
+    background-color: #ffffff;
+    position : absolute;
+    height:75px;
+    width: 100%;
+    padding: 3px;
+    border: 3px solid navy;
+    margin: 3px ;
+    
+    top:0px;
+    bottom:0px;
+    left:0%;
+    right:0;
+   background-image: url("images/SIMU2.jpg"),url("images/SIMU2.jpg");
+   background-size: 90px 80px ;
+   background-position: 99% 0 , 1% 0%;
+    background-repeat: no-repeat;
+    overflow:auto;
+}
+
+
+.div1 {
+    background-color: #c0c0c0;
+    position : absolute;
+    height:600px;
+    width: 50%;
+    padding: 3px;
+    border: 3px solid navy;
+    margin: 3px ;
+    
+    top:85px;
+    bottom:0px;
+    left:0%;
+    right:0;
+   
+    
+    overflow:auto;
+}
+
+.div2 {
+    background-color: #a7f286;
+    position : absolute;
+    height:600px;
+    width: 50%;
+    padding: 3px;
+    border: 3px solid navy;
+    margin: 3px ;
+    
+    top:85px;
+    bottom:0px;
+    left:50%;
+    right:0;
+   
+    
+    overflow:auto;
+}
+
+.div3 {
+    background-color: #ff4848;
+    position : absolute;
+    height:570px;
+    width: 50%;
+    padding: 3px;
+    border: 3px solid navy;
+    margin: 3px ;
+    
+    top:690px;
+    bottom:0px;
+    left:0%;
+    right:0;
+   
+    
+    overflow:auto;
+}
+.div4{
+    background-color: #5372ec;
+    position : absolute;
+    height:570px;
+    width: 50%;
+    padding: 3px;
+    border: 3px solid navy;
+    margin: 3px ;
+    
+    top:690px;
+    bottom:0px;
+    left:50%;
+    right:0;
+   
+    
+    overflow:auto;
+}
+
+/*changemet de couleur de cell*/
+.td_rempli{
+	
+    color: #000000;
+	font-size: 17px;
+	font-weight: bold;
+}
+.td_dispo{
+    background-color: #008080;   /*changer la couleur de la cellule*/
+	color: #000000;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+/*Style de Balises General*/
+tr,td{
+	border:1px solid black ;	
+	font-weight: bold	;
+
+}
+th{
+	font-size: 20px;
+	border:1px solid black ;
+	background-color:#6ab5ff;	
+}
+table{
+border:1px solid black ;	
+width:200px;
+margin:auto;
+}
