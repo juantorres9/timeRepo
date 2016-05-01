@@ -49,7 +49,7 @@ this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	    List<Etagere>  listEtagere=new ArrayList<Etagere>();//Recuperer  tous les etageres
 		List<Integer>  nbrPalette=new ArrayList<Integer>();//Recuperer les nbre de Palettes de tous les etageres
 	    List<Integer> nbrVide= new ArrayList<Integer>();//Recuperer les nbre de vides de tous les etageres
-	   hashData2 hash =new hashData2();
+	   
 	   
 	   //Methodes metier pour execution d'action Utilisateur
 		if(action.equals("incP")){		
