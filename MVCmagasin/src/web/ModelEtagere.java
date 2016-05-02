@@ -6,7 +6,7 @@ import	metier.Etagere;
 public class ModelEtagere {
 //Information recupere depuis l'application
 	private String  nomE;  //Etagere Choisi pour recuperer la valeur  depuis le button choisi
-	private String  actionR;//action Requis pour  decremenenter pu incrementer envoyé par l'utilisateur 
+	private String  actionR;//action Requis pour decremenenter ou incrementer envoyé par l'utilisateur 
 	
 	private int nbrePaletteA;// nbre Palette  pour  montrer à l'utilisateur
    
@@ -29,7 +29,6 @@ public class ModelEtagere {
 	public void setActionR(String actionR) {
 		this.actionR = actionR;
 	}
-
 	public int getNbrePaletteA() {
 		return nbrePaletteA;
 	}
