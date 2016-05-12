@@ -1,4 +1,4 @@
-<%@ page import="java.util.Map,java.util.HashMap ,java.util.ArrayList" %>
+<%@ page import="java.util.Map,java.util.HashMap ,java.util.ArrayList,java.util.TreeMap" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +6,13 @@
 <title>title</title>
 </head>
 <body>
+<% 
+TreeMap<Long,String> tm = new TreeMap<Long,String>();
+/*DEBOUT de Nomencalture  :   0 à  16*/
+tm.put(0L,"U0025 - U0032 \n U0625 - U0632");
+tm.put(1L,"U0133 - U0148");
+request.setAttribute("tm", tm);
+%>
 <%
 HashMap<Long,String> hm=new HashMap<Long,String>();
 /*DEBOUT du  GROUPE  du RACK div1 :   0 à  16*/

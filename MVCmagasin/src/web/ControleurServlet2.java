@@ -17,6 +17,7 @@ import metier.Etagere;
 public class ControleurServlet2 extends HttpServlet {
 	//Initialisation Objet Metier
 	private  IMagasin metier;
+	private ModelEtagere model1 ;
 	//variables constantes
 	private static final long serialVersionUID = 1L;
 	public static final String VUE="/WEB-INF/VueEtagere2.jsp";
@@ -24,7 +25,6 @@ public class ControleurServlet2 extends HttpServlet {
 	public static final String CHAMP_NOM1="nomTag";
 	public static final String CHAMP_ACTION1="actionTag";
        
-
     public ControleurServlet2() {
         super();
     }
@@ -32,25 +32,22 @@ public class ControleurServlet2 extends HttpServlet {
 public void  init() throws   ServletException {
 	//Creation Objet metier 
 	metier= new MagasinMetierImpl();
+	model1=new ModelEtagere();
 }
     
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	   //Recuperation de Parametres de Client
-		String  action =request.getParameter(CHAMP_ACTION1);//type d'action à realiser sur l'etagere
-		String  nomE =request.getParameter(CHAMP_NOM1);// Nom d'etagere à modifier 
-		//Instanciation des Object  de chaque  Request envoyé par le Client  
-		ModelEtagere model1=new ModelEtagere();
-	    List<Etagere>  listEtagere=new ArrayList<Etagere>();//Recuperer  tous les etageres
-		List<Integer>  nbrPalette=new ArrayList<Integer>();//Recuperer les nbre de Palettes de tous les etageres
-	    List<Integer> nbrVide= new ArrayList<Integer>();//Recuperer les nbre de vides de tous les etageres
-	   
-	   
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	 //Recuperation de Parametres de Client
+	String  action =request.getParameter(CHAMP_ACTION1);//type d'action à realiser sur l'etagere
+	String  nomE =request.getParameter(CHAMP_NOM1);// Nom d'etagere à modifier 
+	//Instanciation des Object  de chaque  Request envoyé par le Client  
+	List<Etagere>  listEtagere=new ArrayList<Etagere>();//Recuperer  tous les etageres
+    List<Integer>  nbrPalette=new ArrayList<Integer>();//Recuperer les nbre de Palettes de tous les etageres
+	List<Integer> nbrVide= new ArrayList<Integer>();//Recuperer les nbre de vides de tous les etageres
+	     
 	   //Methodes metier pour execution d'action Utilisateur
 		if(action.equals("incP")){		
 			 metier.incrementerP(nomE);
@@ -62,17 +59,17 @@ this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 			metier.decrementerV(nomE);
 		}else {}
 		//Recuperation  d'attributs depuis ListEtagere  paquet metier  
-		listEtagere =metier.listEtageres();
+			listEtagere =metier.listEtageres();
 		for(int i =0;i<listEtagere.size();i++){
-		nbrPalette.add(listEtagere.get(i).getNbrPalette());	
-		nbrVide.add(listEtagere.get(i).getNbrVide());
+			nbrPalette.add(listEtagere.get(i).getNbrPalette());	
+			nbrVide.add(listEtagere.get(i).getNbrVide());
 		}
 		//Extrait du contenu du Clolumns d'objet etagere  vers le Modele pour creer le listNbrP + ListNbrV
 		model1.setListNbrP(nbrPalette);
 		model1.setListNbrV(nbrVide);
 		    //Envoie de Bean"Model"  comme attribut  vers la JSP pour affichage 
-				 request.setAttribute("elements",listEtagere.size());
-				 request.setAttribute("model",model1);//Envoi de Model Bean vers la page JSP 
+		request.setAttribute("elements",listEtagere.size());
+		request.setAttribute("model",model1);//Envoi de Model Bean vers la page JSP 
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);		
 	}
 
