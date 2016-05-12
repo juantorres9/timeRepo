@@ -27,7 +27,7 @@
     <th>${al[6] }</th>
   </tr>
   <tr>
-  <td class=tdE><c:out value="${tm[0] }"/></td>
+  <td class="tde">${tm[0]}</td>
   <td class="${model.listNbrP[0]==0 ? 'td_rempli' :'td_dispo'}"><c:out value="${model.listNbrP[0]}"/> </td>
   <td>
   <form action=control  method="post">
@@ -41,7 +41,7 @@
   <button type="submit" value ="decP" name="actionTag">MOINS-</button>
   </form>
   </td>
-  <td class="${model.listNbrV[0]==0 ? 'td_rempli' :'td_dispo'}"><c:out value="${model.listNbrV[17] }"/></td>  
+  <td class="${model.listNbrV[0]==0 ? 'td_rempli' :'td_dispo'}"><c:out value="${model.listNbrV[0] }"/></td>  
   <td>
   <form action=control  method="post">
   <input type="hidden" value="${hm[0] }"  name="nomTag">
@@ -57,7 +57,7 @@
  </tr>
   <!--++++++++++++++++++++++RACK 1+++++++++++++++++++++++-->
   <tr>
-  <td><c:out value="${tm[1] }"/></td>
+  <td class="tde">${tm[1]}</td>
   <td class="${model.listNbrP[1]==0 ? 'td_rempli' :'td_dispo'}"><c:out value="${model.listNbrP[1] }"/> </td>
   <td>
   <form action=control  method="post">

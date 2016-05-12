@@ -9,8 +9,8 @@
 <% 
 TreeMap<Long,String> tm = new TreeMap<Long,String>();
 /*DEBOUT de Nomencalture  :   0 à  16*/
-tm.put(0L,"U0025 - U0032 \n U0625 - U0632");
-tm.put(1L,"U0133 - U0148");
+tm.put(0L,"U0025 - U0032 <br/>U0625 - U0632");
+tm.put(1L,"U0033 - U0040 <br/>U0633 - U0640");
 request.setAttribute("tm", tm);
 %>
 <%
