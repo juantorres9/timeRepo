@@ -59,10 +59,8 @@ public class MagasinMetierImpl  implements IMagasin {
 	@Override
 	public Etagere recuperePalette(String nomEtagere) {
 		Etagere objEtagere=null;
-	
 		Connection conn=SingletonConnection.getConnection();//Creation Connection 
 	
-
 		try {
 			//Requete de lecture
 			PreparedStatement ps = conn.prepareStatement("	SELECT * FROM table_magasin WHERE etagere='"+nomEtagere+"'");
@@ -143,6 +141,24 @@ public class MagasinMetierImpl  implements IMagasin {
 		
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public String getUpdateTable() {
+		Connection conn=SingletonConnection.getConnection();
+		String dateString=null;
+		try{
+			PreparedStatement ps = conn.prepareStatement("SELECT UPDATE_TIME FROM   information_schema.tables WHERE  TABLE_SCHEMA = 'base_magasin'   AND TABLE_NAME = 'table_magasin' ;");
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()){
+				dateString=rs.getString("UPDATE_TIME");
+			}
+			ps.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		if(dateString==null)throw new RuntimeException("la dernier UPDATE dateTime du tableau  est NULL");
+		return dateString;
 	}	
 	
 	
