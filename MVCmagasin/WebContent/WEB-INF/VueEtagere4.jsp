@@ -2059,7 +2059,7 @@
   <td class="tde">${tm[65]}</td>
   <td class="${model.listNbrP[65]==0 ? 'td_rempli' :'td_dispo'}"><c:out value="${model.listNbrP[65]}"/> </td>
   <td>
-  <form action=controll?#1  method="post">
+  <form action=control?#1  method="post">
   <input type="hidden" value="${hm[65]}"  name="nomTag">
   <button type="submit" value ="incP" name="actionTag">PLUS+</button>
   </form>
